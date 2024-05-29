@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+    database:
+        build: .
+        image: database
+        container_name: database
+        env_file:
+            - .env
+        ports:
+            - "${DATABASE_PORT}:3306"
+        volumes:
+            - database:/var/lib/mysql 
+        networks:
+            - deliboard
+
+volumes:
+    database:
+        name: mysql-volume
+
+networks:
+    deliboard:
+        name: deliboard-network
+        external: true

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/Home">
+
+    <action
+        android:id="@+id/action_global_Home"
+        app:destination="@id/Home" />
+
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.example.deliboard.mainfg.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+
+
+        <action
+            android:id="@+id/action_Home_to_GameList"
+            app:destination="@id/GameList" />
+        <action
+            android:id="@+id/action_Home_to_beverage"
+            app:destination="@id/beverage" />
+        <action
+            android:id="@+id/action_Home_to_recommend"
+            app:destination="@id/recommend" />
+        <action
+            android:id="@+id/action_Home_to_gameDetail"
+            app:destination="@id/gameDetail" />
+        <action
+            android:id="@+id/action_Home_to_roomInfo"
+            app:destination="@id/roomInfo" />
+        <action
+            android:id="@+id/action_Home_to_orderHistory"
+            app:destination="@id/orderHistory" />
+    </fragment>
+    <fragment
+        android:id="@+id/GameList"
+        android:name="com.example.deliboard.game.GameList"
+        android:label="fragment_game_list"
+        tools:layout="@layout/fragment_game_list" >
+        <action
+            android:id="@+id/action_GameList_to_gameDetail"
+            app:destination="@id/gameDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommend"
+        android:name="com.example.deliboard.recommend.Recommend"
+        android:label="fragment_recommend"
+        tools:layout="@layout/fragment_recommend" />
+    <fragment
+        android:id="@+id/beverage"
+        android:name="com.example.deliboard.beverage.Beverage"
+        android:label="fragment_beverage"
+        tools:layout="@layout/fragment_beverage" >
+        <action
+            android:id="@+id/action_beverage_to_cart"
+            app:destination="@id/cart" />
+        <action
+            android:id="@+id/action_beverage_to_Home"
+            app:destination="@id/Home" />
+        <action
+            android:id="@+id/action_beverage_self"
+            app:destination="@id/beverage" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameDetail"
+        android:name="com.example.deliboard.detail.GameDetail"
+        android:label="fragment_game_detail"
+        tools:layout="@layout/fragment_game_detail" >
+        <action
+            android:id="@+id/action_gameDetail_to_GameList"
+            app:destination="@id/GameList" />
+    </fragment>
+    <fragment
+        android:id="@+id/cart"
+        android:name="com.example.deliboard.beverage.cart.Cart"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cart_to_beverage"
+            app:destination="@id/beverage" />
+        <action
+            android:id="@+id/action_cart_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomInfo"
+        android:name="com.example.deliboard.room.RoomInfo"
+        android:label="fragment_room_info"
+        tools:layout="@layout/fragment_room_info" />
+    <fragment
+        android:id="@+id/orderHistory"
+        android:name="com.example.deliboard.room.History"
+        android:label="fragment_order_history"
+        tools:layout="@layout/fragment_order_history" />
+</navigation>

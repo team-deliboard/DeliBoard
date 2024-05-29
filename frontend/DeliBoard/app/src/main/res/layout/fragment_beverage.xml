@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".beverage.Beverage">
+
+<!--    프래그먼트 -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/BeverageContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        app:defaultNavHost="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/beverageGuideLine"
+        app:navGraph="@navigation/menu_nav" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/beverageGuideLine"
+        android:layout_width="3dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7"
+        android:background="@drawable/dotted_line"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cartLogo"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="#FCEBB6"
+        app:layout_constraintStart_toEndOf="@+id/beverageGuideLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/basket">
+        </ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartRV"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toEndOf="@id/beverageGuideLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cartLogo"
+        app:layout_constraintBottom_toTopOf="@id/cartPrice"
+        android:background="#FFFFFF"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="4dp"/>
+
+    <TextView
+        android:id="@+id/cartDeleteButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/jua"
+        app:layout_constraintStart_toEndOf="@id/beverageGuideLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="비우기"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/white"
+        android:background="#5E412F"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/cartPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:fontFamily="@font/jua"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@id/orderButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="원"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/orderButton"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/jua"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cartDeleteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="주문하기"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/black"
+        android:background="#FCEBB6"
+        android:textSize="30dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

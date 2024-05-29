@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+    jenkins:
+        build: .
+        image: jenkins
+        container_name: jenkins
+        env_file:
+            - .env
+        ports:
+            - "${JENKINS_PORT}:8080"
+            - "${JENKINS_PORT_2}:50000"
+        volumes:
+            - jenkins:/var/jenkins_home
+            - /var/run/docker.sock:/var/run/docker.sock
+        networks:
+            - deliboard
+        environment:
+            - JENKINS_OPTS="--prefix=/jenkins"
+
+networks:
+    deliboard:
+        name: deliboard-network
+        external: true
+
+volumes:
+    jenkins:
+        name: jenkins-volume

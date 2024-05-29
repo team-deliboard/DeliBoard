@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tutoA"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tutorial">
+
+    <ImageView
+        android:id="@+id/tutorialImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/tuto1"
+        />
+
+    <ImageView
+        android:id="@+id/tutorialImage2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/tuto2"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

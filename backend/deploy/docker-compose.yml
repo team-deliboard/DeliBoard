@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+    api-server:
+        build:
+            context: .
+            dockerfile: Dockerfile.api-server
+        image: api-server
+        container_name: api-server
+        env_file:
+            - .env
+        ports:
+            - "${API_SERVER_PORT}:8080"
+        networks:
+            - deliboard
+
+    socket-server:
+        build:
+            context: .
+            dockerfile: Dockerfile.socket-server
+        image: socket-server
+        container_name: socket-server
+        env_file:
+            - .env
+        ports:
+            - "${SOCKET_PORT}:${SOCKET_PORT}"
+        networks:
+            - deliboard
+        depends_on:
+            - api-server
+
+networks:
+    deliboard:
+        name: deliboard-network
+        external: true

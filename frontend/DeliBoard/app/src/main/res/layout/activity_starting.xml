@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/startingA"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#AA88EE"
+    tools:context=".room.StartingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stHeaderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stLogoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="20dp">
+
+            <!-- Logo Image -->
+            <ImageView
+                android:id="@+id/stLogoImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/chess_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="30dp"/>
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/stTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" DeliBoard"
+                android:textColor="@color/white"
+                android:fontFamily="@font/jua"
+                android:textSize="100sp"
+                app:layout_constraintStart_toEndOf="@id/stLogoImageView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginEnd="8dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Right Text -->
+        <TextView
+            android:id="@+id/stRightTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="와이파이 비밀번호: SSAFY801\n딜리보드 역삼 멀티캠퍼스점"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textAlignment="textEnd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="40dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/stHeaderLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!--    시작버튼-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/startButton"
+            android:layout_width="440dp"
+            android:layout_height="360dp"
+            android:layout_margin="10dp"
+            android:background="#FFFFFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideButton"
+            >
+
+            <Space
+                android:id="@+id/startSpace"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toTopOf="@id/startTitle"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/startTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jua"
+                android:text="시작하기"
+                android:textColor="#523829"
+                android:textSize="90sp"
+                app:layout_constraintBottom_toTopOf="@id/startImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/startSpace" />
+
+            <ImageView
+                android:id="@+id/startImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/dice_brown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="8:10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/startTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--가이드-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/guideButton"
+            android:layout_width="440dp"
+            android:layout_height="360dp"
+            android:layout_margin="10dp"
+            android:background="#FCEBB6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <Space
+                android:id="@+id/guideSpace"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toTopOf="@id/guideTitle"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/guideTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/jua"
+                android:text="매장안내"
+                android:textColor="#523829"
+                android:textSize="90sp"
+                app:layout_constraintBottom_toTopOf="@id/guideImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideSpace" />
+
+            <ImageView
+                android:id="@+id/guideImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/book_brown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="8:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/logoutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="20dp"
+        android:text="연결해제"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

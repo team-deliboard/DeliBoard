@@ -1,0 +1,4 @@
+FROM amazoncorretto:17-al2023-headless
+ENV TZ Asia/Seoul
+COPY ./app.jar /build/app.jar
+ENTRYPOINT ["java", "-jar", "/build/app.jar"]

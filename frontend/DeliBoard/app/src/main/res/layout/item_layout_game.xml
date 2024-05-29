@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="10dp"
+    android:paddingStart="6dp">
+
+    <TextView
+        android:id="@+id/listTitle"
+        android:text="title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:fontFamily="@font/jua"
+        android:layout_margin="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/listPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:text="min ~ max"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listTitle" />
+
+    <TextView
+        android:id="@+id/listPlaytime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="10dp"
+        android:text="min ~ max"
+        app:layout_constraintStart_toEndOf="@+id/listPlayer"
+        app:layout_constraintTop_toBottomOf="@+id/listTitle" />
+
+    <TextView
+        android:id="@+id/listDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="10dp"
+        android:text="star"
+        app:layout_constraintStart_toEndOf="@+id/listPlaytime"
+        app:layout_constraintTop_toBottomOf="@+id/listTitle" />
+
+    <TextView
+        android:id="@+id/listTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="4dp"
+        android:text="theme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listPlayer" />
+
+    <TextView
+        android:id="@+id/listStock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="10dp"
+        android:text="stock"
+        app:layout_constraintStart_toEndOf="@+id/listTheme"
+        app:layout_constraintTop_toBottomOf="@+id/listPlaytime" />
+
+    <TextView
+        android:id="@+id/listDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="6dp"
+        android:text="contentaaaaaaaaaaaa\n
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listTheme"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/thumbnailImage"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_width="150dp"
+        android:layout_height="140dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginHorizontal="3dp"
+        android:background="@drawable/dotted_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+    nginx:
+        build: .
+        image: nginx
+        container_name: nginx
+        env_file:
+            - .env
+        volumes:
+            - "${SSL_CERT_PATH}:/etc/nginx/ssl/fullchain.pem"
+            - "${SSL_KEY_PATH}:/etc/nginx/ssl/privkey.pem"
+            - /var/www/html/image:/usr/share/nginx/image
+        ports:
+            - "80:80"
+            - "443:443"
+        networks:
+            - deliboard
+
+networks:
+    deliboard:
+        name: deliboard-network
+        external: true

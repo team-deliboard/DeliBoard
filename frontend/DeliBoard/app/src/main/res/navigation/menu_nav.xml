@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_nav"
+    app:startDestination="@id/coffee">
+    <fragment
+        android:id="@+id/coffee"
+        android:name="com.example.deliboard.beverage.menus.Coffee"
+        android:label="fragment_coffee"
+        tools:layout="@layout/fragment_coffee" >
+        <action
+            android:id="@+id/action_coffee_to_snack"
+            app:destination="@id/snack" />
+        <action
+            android:id="@+id/action_coffee_to_noCafe"
+            app:destination="@id/noCafe" />
+    </fragment>
+    <fragment
+        android:id="@+id/noCafe"
+        android:name="com.example.deliboard.beverage.menus.NoCafe"
+        android:label="fragment_no_cafe"
+        tools:layout="@layout/fragment_no_cafe" >
+        <action
+            android:id="@+id/action_noCafe_to_coffee"
+            app:destination="@id/coffee" />
+        <action
+            android:id="@+id/action_noCafe_to_snack"
+            app:destination="@id/snack" />
+    </fragment>
+    <fragment
+        android:id="@+id/snack"
+        android:name="com.example.deliboard.beverage.menus.Snack"
+        android:label="fragment_snack"
+        tools:layout="@layout/fragment_snack" >
+        <action
+            android:id="@+id/action_snack_to_coffee"
+            app:destination="@id/coffee" />
+        <action
+            android:id="@+id/action_snack_to_noCafe"
+            app:destination="@id/noCafe" />
+    </fragment>
+</navigation>
